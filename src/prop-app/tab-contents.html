@@ -35,7 +35,7 @@
       }
     </style>
 
-    <iron-ajax auto="" url="../../data/tabs/tabs.json" handle-as="json" last-response="{{listCategory}}"></iron-ajax>
+    <iron-ajax auto="" url="./data/tabs/tabs.json" handle-as="json" last-response="{{listCategory}}"></iron-ajax>
 
     <div class="post-cat">
       <template is="dom-repeat" items="[[listCategory.args]]">
