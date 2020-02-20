@@ -1,0 +1,49 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+<dom-module id="prop-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      iron-icon{
+        filter: grayscale(100%);
+      }
+      :host([pressed]) iron-icon {
+        filter: grayscale(0%);
+      }
+    </style>
+    
+    <iron-icon on-click="toggle" src="../../images/like.png"></iron-icon>
+
+  </template>
+
+  <script>/**
+ * @customElement
+ * @polymer
+ */
+class PropApp extends Polymer.Element {
+  static get is() {
+    return 'prop-app';
+  }
+
+  static get properties() {
+    return {
+      pressed: {
+        type: Boolean,
+        notify: false,
+        reflectToAttribute: true,
+        value: false
+      }
+    };
+  }
+
+  toggle() {
+    this.pressed = !this.pressed;
+  }
+
+}
+
+window.customElements.define(PropApp.is, PropApp);</script>
+</dom-module>

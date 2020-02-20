@@ -1,0 +1,108 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+
+<dom-module id="tapcontents-app">
+  <template>
+    <style>
+      :host {
+        display: block
+      }
+      .post-cat{
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .post-cat ul {
+        margin: 10px 0 30px;
+      }
+      .post-cat h2{
+        font-size: 16px;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .post-cat li{
+        list-style: none;
+        padding: 15px 0;
+      }
+      .post-cat li+li{
+        border-top: 1px solid #ccc;
+      }
+      .post-cat span{ margin-right: 20px;}
+      a{
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+
+    <iron-ajax auto="" url="../../data/tabs/tabs.json" handle-as="json" last-response="{{listCategory}}"></iron-ajax>
+
+    <div class="post-cat">
+      <template is="dom-repeat" items="[[listCategory.args]]">
+        <h2>[[item.catName]]</h2>
+        <ul>
+          <template is="dom-repeat" items="[[item.posts]]">
+            <li>
+              <span>[[item.created]]</span>
+              <a href="">[[item.title]]</a>
+            </li>
+          </template>
+        </ul>
+      </template>
+    </div>
+
+  </template>
+
+  <script>class TabContentApp extends Polymer.Element {
+  /**
+   * String providing the tag name to register the element under.
+   */
+  static get is() {
+    return 'tapcontents-app';
+  }
+  /**
+   * Object describing property-related metadata used by Polymer features
+   */
+
+
+  static get properties() {
+    return {
+      actived: {
+        type: Boolean,
+        value: false,
+        reflectToAttribute: true
+      }
+    };
+  }
+  /**
+   * Instance of the element is created/upgraded. Use: initializing state,
+   * set up event listeners, create shadow dom.
+   * @constructor
+   */
+
+
+  constructor() {
+    super();
+  }
+  /**
+   * Use for one-time configuration of your component after local DOM is initialized. 
+   */
+
+
+  ready() {
+    super.ready();
+    Polymer.RenderStatus.afterNextRender(this, function () {});
+  }
+
+  _restart() {
+    window.location.reload();
+  }
+
+  activeTab() {
+    if (this.actived) {}
+  }
+
+}
+
+window.customElements.define(TabContentApp.is, TabContentApp);</script>
+</dom-module>

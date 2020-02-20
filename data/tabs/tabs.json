@@ -1,0 +1,56 @@
+{
+  "args": [
+    {
+      "catName": "Category 1", 
+      "posts": [
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2010",
+          "created": "2020/02/17"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2019",
+          "created": "2019/12/18"
+        }
+      ]
+    },
+    {
+      "catName": "Category 2", 
+      "posts": [
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        }
+      ]
+    },
+    {
+      "catName": "Category 3", 
+      "posts": [
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        },
+        {
+          "title": "The Best Nature Photographs Of 2015",
+          "created": "2020/02/18"
+        }
+      ]
+    }
+
+  ]
+}
